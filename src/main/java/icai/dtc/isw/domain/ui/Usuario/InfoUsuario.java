@@ -1,7 +1,7 @@
-package icai.dtc.isw.domain.ui.Usuario;
+package main.java.icai.dtc.isw.domain.ui.Usuario;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.ui.MapaMenu;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.ui.MapaMenu;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -121,6 +121,7 @@ public class InfoUsuario extends JFrame
         this.add(pnlBotones,BorderLayout.SOUTH);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
+        this.setSize(500,350);
         this.setResizable(true);//Para que se pueda redimensionar
         this.setLocationRelativeTo(null);
         this.setVisible(true);

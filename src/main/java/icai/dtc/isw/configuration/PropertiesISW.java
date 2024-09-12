@@ -1,4 +1,4 @@
-package icai.dtc.isw.configuration;
+package main.java.icai.dtc.isw.configuration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

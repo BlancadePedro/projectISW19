@@ -1,13 +1,13 @@
-package icai.dtc.isw.domain.ui.Mapa;
+package main.java.icai.dtc.isw.domain.ui.Mapa;
 
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.ocio.Parque;
-import icai.dtc.isw.domain.ui.MapaMenu;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.domain.ui.MapaMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,32 +25,39 @@ public class PnlFavoritos extends JFrame {
         panelCentro = new JPanel((new GridLayout(size,2)));
         ArrayList<JButton> btnList = new ArrayList<JButton>();
         JButton btnEliminar;
-
+        panelCentro.setBackground(new Color(174, 214, 241));
+        Font fuente = new Font("Tahoma", Font.ITALIC, 17);
         int contador=0;
         for (Object l : barrioList) {
             if (l instanceof Hotel){
                 Hotel h = (Hotel)l;
-                JLabel label = new JLabel("Nombre: "+h.getNombre()+"; Dirección: "+h.getDireccion()+ "; Horario: "+h.getHorario());
+                JLabel label = new JLabel("Nombre: "+h.getNombre()+"; Dirección: "+h.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }else if(l instanceof Restaurante){
                 Restaurante r = (Restaurante)l;
-                JLabel label = new JLabel("Nombre: "+r.getNombre()+"; Dirección: "+r.getDireccion()+ "; Horario: "+r.getHorario());
+                JLabel label = new JLabel("Nombre: "+r.getNombre()+"; Dirección: "+r.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }else if(l instanceof Museo) {
                 Museo m = (Museo) l;
-                JLabel label = new JLabel("Nombre: "+m.getNombre()+"; Dirección: "+m.getDireccion()+ "; Horario: "+m.getHorario());
+                JLabel label = new JLabel("Nombre: "+m.getNombre()+"; Dirección: "+m.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }else if(l instanceof Parque) {
                 Parque p = (Parque) l;
-                JLabel label = new JLabel("Nombre: "+p.getNombre()+"; Dirección: "+p.getDireccion()+ "; Horario: "+p.getHorario());
+                JLabel label = new JLabel("Nombre: "+p.getNombre()+"; Dirección: "+p.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }else if(l instanceof Monumento) {
                 Monumento mo = (Monumento) l;
                 JLabel label = new JLabel("Nombre: "+mo.getNombre()+"; Dirección: "+mo.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }else if(l instanceof Evento) {
                 Evento e = (Evento) l;
-                JLabel label = new JLabel("Nombre: "+e.getNombre()+"; Dirección: "+e.getDireccion()+ "; Autor: "+e.getAutor());
+                JLabel label = new JLabel("Nombre: "+e.getNombre()+"; Dirección: "+e.getDireccion());
+                label.setFont(fuente);
                 panelCentro.add(label);
             }
             btnEliminar = new JButton("Eliminar de favoritos");
@@ -61,13 +68,14 @@ public class PnlFavoritos extends JFrame {
                     System.out.println("Se ha pulsado boton de "+barrioList.get(finalContador));
                     MapaMenu.eliminarFavorito(barrioList.get(finalContador));
                     dispose();
-                    //new PnlFavoritos(barrioList,perfil);
                 }
             });
             btnList.add(btnEliminar);
             panelCentro.add(btnEliminar);
             contador=contador+1;
         }
+        btnVolver.setBackground(new Color(52, 152, 219));
+        btnVolver.setForeground(Color.WHITE);
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){

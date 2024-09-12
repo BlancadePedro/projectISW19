@@ -1,8 +1,7 @@
-package icai.dtc.isw.domain.ui.Agenda;
+package main.java.icai.dtc.isw.domain.ui.Agenda;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.Agenda.FranjaHoraria;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +17,7 @@ public class ModificarAgenda extends  JFrame{
     private JButton btnVolver = new JButton("Cerrar");
 
 
-    public ModificarAgenda(Customer perfil,ArrayList<FranjaHoraria> lista){
+    public ModificarAgenda(Customer perfil,ArrayList<FranjaHorariaReal> lista){
 
         Font fuente = new Font("Tahoma", Font.ITALIC, 17);
         Font fuenteTitulo = new Font("Tahoma", Font.BOLD, 17);
@@ -29,13 +28,13 @@ public class ModificarAgenda extends  JFrame{
         ArrayList<JButton> editarList = new ArrayList<>();
 
         int contador=0;
-        for (FranjaHoraria f : lista){
-
+        for (FranjaHorariaReal f : lista){
+            int indice = contador+1;
 
             JButton btnEliminar = new JButton("Eliminar");
             JButton btnEditar = new JButton("Editar");
 
-            JLabel hora = new JLabel("Hora: "+f.getHora());
+            JLabel hora = new JLabel(indice+"_"+"Hora: "+f.getHora());
             hora.setFont(fuenteTitulo);
             JLabel dia = new JLabel("Día: "+f.getDia());
             dia.setFont(fuenteTitulo);
@@ -66,24 +65,15 @@ public class ModificarAgenda extends  JFrame{
                 }
             });
 
-            /*btnEditar.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println("Se ha pulsado boton de editar");
-                    //dispose();
-                }
-            });*/
 
             eliminarList.add(btnEliminar);
-            //editarList.add(btnEditar);
             panelCentro.add(btnEliminar);
-            //panelCentro.add(btnEditar);
             contador=contador+1;
         }
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
-                ArrayList<FranjaHoraria> listaInfo = new ArrayList<>();
+                ArrayList<FranjaHorariaReal> listaInfo = new ArrayList<>();
 
                 Client client = new Client();
                 HashMap<String, Object> session = new HashMap<String, Object>();
@@ -101,7 +91,7 @@ public class ModificarAgenda extends  JFrame{
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
-        this.setResizable(true);//Para que no se pueda redimensionar
+        this.setResizable(true);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }

@@ -1,11 +1,9 @@
-package icai.dtc.isw.domain.ui.Usuario;
+package main.java.icai.dtc.isw.domain.ui.Usuario;
 
 import java.io.Serializable;
 
 public class Customer implements Serializable {
-	/**
-	 *
-	 */
+
 	private static final long serialVersionUID = 1L;
 	//Inicio de sesión
 	private String clave = null;

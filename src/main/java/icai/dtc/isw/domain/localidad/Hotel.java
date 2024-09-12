@@ -1,6 +1,5 @@
-package icai.dtc.isw.domain.localidad;
+package main.java.icai.dtc.isw.domain.localidad;
 
-import icai.dtc.isw.domain.localidad.Localidad;
 
 public class Hotel extends Localidad {
     private String estrellas;

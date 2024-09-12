@@ -1,4 +1,4 @@
-package icai.dtc.isw.message;
+package main.java.icai.dtc.isw.message;
 
 import java.io.Serializable;
 import java.util.HashMap;

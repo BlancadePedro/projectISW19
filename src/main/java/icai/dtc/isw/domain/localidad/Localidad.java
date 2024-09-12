@@ -1,4 +1,4 @@
-package icai.dtc.isw.domain.localidad;
+package main.java.icai.dtc.isw.domain.localidad;
 
 import java.io.Serializable;
 

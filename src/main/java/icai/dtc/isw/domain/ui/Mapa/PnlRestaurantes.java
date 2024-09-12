@@ -1,7 +1,7 @@
-package icai.dtc.isw.domain.ui.Mapa;
+package main.java.icai.dtc.isw.domain.ui.Mapa;
 
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,6 +23,7 @@ public class PnlRestaurantes extends JFrame {
         int contador = 0;
 
         panelCentro = new JPanel((new GridLayout(size*2,1)));
+        panelCentro.setBackground(new Color(174, 214, 241));
         for (Restaurante l : lista) {
             int indice = contador+1;
             JLabel label = new JLabel(indice+"_"+l.getNombre()+"; Dirección: "+l.getDireccion()+ "; Horario: "+l.getHorario()+"; Contacto: "+l.getContacto()+"; Precio: "+l.getPrecio()+"; Es "+l.getTipoComida());
@@ -32,6 +33,8 @@ public class PnlRestaurantes extends JFrame {
             panelCentro.add(espacio);
             contador=contador+1;
         }
+        btnVolver.setBackground(new Color(52, 152, 219));
+        btnVolver.setForeground(Color.WHITE);
         btnVolver.addActionListener(new ActionListener() {
 
             @Override

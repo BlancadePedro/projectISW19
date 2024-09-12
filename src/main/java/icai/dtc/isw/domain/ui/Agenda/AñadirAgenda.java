@@ -1,7 +1,7 @@
-package icai.dtc.isw.domain.ui.Agenda;
+package main.java.icai.dtc.isw.domain.ui.Agenda;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,7 +48,7 @@ public class AñadirAgenda extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
-                ArrayList<FranjaHoraria> listaInfo = new ArrayList<>();
+                ArrayList<FranjaHorariaReal> listaInfo = new ArrayList<>();
 
                 Client client = new Client();
                 HashMap<String, Object> session = new HashMap<String, Object>();
@@ -66,7 +66,7 @@ public class AñadirAgenda extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 contador = contador+1;
-                FranjaHoraria add = new FranjaHoraria(txtHora.getText(),txtDia.getText(),txtMes.getText(),txtDescripcion.getText(),txtAño.getText());
+                FranjaHorariaReal add = new FranjaHorariaReal(txtHora.getText(),txtDia.getText(),txtMes.getText(),txtDescripcion.getText(),txtAño.getText());
 
                 Client client = new Client();
                 HashMap<String, Object> session = new HashMap<String, Object>();

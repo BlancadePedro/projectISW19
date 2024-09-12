@@ -1,6 +1,6 @@
-package icai.dtc.isw.domain.localidad;
+package main.java.icai.dtc.isw.domain.localidad;
 
-import icai.dtc.isw.domain.localidad.Localidad;
+import main.java.icai.dtc.isw.domain.localidad.Localidad;
 
 public class Restaurante extends Localidad {
     private String tipoComida;

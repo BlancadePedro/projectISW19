@@ -1,4 +1,4 @@
-package icai.dtc.isw.domain.ocio;
+package main.java.icai.dtc.isw.domain.ocio;
 
 import java.io.Serializable;
 

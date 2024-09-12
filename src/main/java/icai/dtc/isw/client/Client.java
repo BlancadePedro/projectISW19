@@ -1,4 +1,4 @@
-package icai.dtc.isw.client;
+package main.java.icai.dtc.isw.client;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,22 +10,22 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Parque;
-import icai.dtc.isw.domain.ui.*;
-import icai.dtc.isw.domain.ui.Agenda.Agenda;
-import icai.dtc.isw.domain.ui.Agenda.FranjaHoraria;
-import icai.dtc.isw.domain.ui.Mapa.*;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.PanelInicio;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.domain.ui.*;
+import main.java.icai.dtc.isw.domain.ui.Agenda.Agenda;
+import main.java.icai.dtc.isw.domain.ui.Agenda.FranjaHorariaReal;
+import main.java.icai.dtc.isw.domain.ui.Mapa.*;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.ui.PanelInicio;
 import org.apache.log4j.Logger;
 
-import icai.dtc.isw.configuration.PropertiesISW;
-import icai.dtc.isw.message.Message;
+import main.java.icai.dtc.isw.configuration.PropertiesISW;
+import main.java.icai.dtc.isw.message.Message;
 
 public class Client {
 	private String host;
@@ -184,12 +184,10 @@ public class Client {
 
 			case "/addAgendaResponse":
 				System.out.println("\nSe ha añadido contenido a la agenda");
-				ArrayList<FranjaHoraria> listaInfo = new ArrayList<>();
+				ArrayList<FranjaHorariaReal> listaInfo = new ArrayList<>();
 				Customer add = (Customer)(mensajeVuelta.getSession().get("perfilAgenda"));
 				break;
-			case "/updateAgendaResponse":
-				System.out.println("\nSe ha actualizado la agenda");
-				break;
+
 			case "/deleteAgendaResponse":
 				System.out.println("\nSe ha borrado parte del contenido de la agenda");
 				break;
@@ -199,7 +197,7 @@ public class Client {
 			case "/infoAgendaResponse":
 				System.out.println("Tenemos la info guardada en la base de datos");
 				Customer perfilAgenda = (Customer)(mensajeVuelta.getSession().get("perfilAgenda"));
-				ArrayList<FranjaHoraria> listaAgenda = (ArrayList<FranjaHoraria>)(mensajeVuelta.getSession().get("listaAgenda"));
+				ArrayList<FranjaHorariaReal> listaAgenda = (ArrayList<FranjaHorariaReal>)(mensajeVuelta.getSession().get("listaAgenda"));
 				//listaAgenda = Agenda.establecerID(listaAgenda,perfilAgenda);
 				new Agenda(perfilAgenda,listaAgenda);
 				break;

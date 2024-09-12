@@ -1,13 +1,13 @@
-package icai.dtc.isw.domain.ui.Mapa;
+package main.java.icai.dtc.isw.domain.ui.Mapa;
 
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.ocio.Parque;
-import icai.dtc.isw.domain.ui.MapaMenu;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.domain.ui.MapaMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -67,6 +67,7 @@ public class PnlBarrio extends JFrame {
             }
 
             btnFav = new JButton("Añadir a favoritos");
+
             int finalContador = contador;
             btnFav.addActionListener(new ActionListener() {
                 @Override
@@ -82,7 +83,8 @@ public class PnlBarrio extends JFrame {
             contador=contador+1;
 
         }
-
+        btnVolver.setBackground(new Color(52, 152, 219));
+        btnVolver.setForeground(Color.WHITE);
         btnVolver.addActionListener(new ActionListener() {
 
             @Override

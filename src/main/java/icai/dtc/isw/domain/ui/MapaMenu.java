@@ -1,15 +1,15 @@
-package icai.dtc.isw.domain.ui;
+package main.java.icai.dtc.isw.domain.ui;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Parque;
-import icai.dtc.isw.domain.ui.Agenda.FranjaHoraria;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.Usuario.InfoUsuario;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.domain.ui.Agenda.FranjaHorariaReal;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.ui.Usuario.InfoUsuario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -302,7 +302,7 @@ public class MapaMenu extends JFrame{
                     }
                     if(opcion.equals("Mi Agenda")){
 
-                        ArrayList<FranjaHoraria> listaInfo = new ArrayList<>();
+                        ArrayList<FranjaHorariaReal> listaInfo = new ArrayList<>();
 
                         Client client = new Client();
                         HashMap<String, Object> session = new HashMap<String, Object>();
@@ -313,7 +313,7 @@ public class MapaMenu extends JFrame{
 
                     }
                     if(opcion.equals("Información importante")){
-                        System.out.println("En proceso");
+                        JOptionPane.showMessageDialog(null,"Número de teléfono de emergencia: 112");
                     }
                     if(opcion.equals("Mis favoritos")){
                         MapaMenu.verFavoritos();
@@ -445,7 +445,7 @@ public class MapaMenu extends JFrame{
         this.add(pnlCentral, BorderLayout.CENTER);
 
         //Configuramos el frame
-
+        this.setSize(1400,1075);
         this.setTitle("Mapa de Madrid");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();

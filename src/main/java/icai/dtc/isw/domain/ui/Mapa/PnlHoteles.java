@@ -1,7 +1,7 @@
-package icai.dtc.isw.domain.ui.Mapa;
+package main.java.icai.dtc.isw.domain.ui.Mapa;
 
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,15 +21,18 @@ public class PnlHoteles extends JFrame {
         int contador = 0;
 
         panelCentro = new JPanel((new GridLayout(size*2,1)));
+        panelCentro.setBackground(new Color(174, 214, 241));
         for (Hotel l : lista) {
             int indice = contador+1;
-            JLabel label = new JLabel(indice+"_"+l.getNombre()+"; Dirección: "+l.getDireccion()+ "; Horario: "+l.getHorario()+"Contacto: "+l.getContacto()+"; Precio: "+l.getPrecio()+ "; Estrellas: "+l.getEstrellas()+"; Es "+l.getPublico()+"\n");
+            JLabel label = new JLabel(indice+"_"+l.getNombre()+"; Dirección: "+l.getDireccion()+ "; Horario: "+l.getHorario()+"Contacto: "+l.getContacto()+"; Precio: "+l.getPrecio()+ "; Estrellas: "+l.getEstrellas()+"; Es "+l.getPublico()+"; Moscotas: "+l.getMascotas());
             JLabel espacio = new JLabel(" ");
             label.setFont(fuente);
             panelCentro.add(label);
             panelCentro.add(espacio);
             contador = contador+1;
         }
+        btnVolver.setBackground(new Color(52, 152, 219));
+        btnVolver.setForeground(Color.WHITE);
         btnVolver.addActionListener(new ActionListener() {
 
             @Override

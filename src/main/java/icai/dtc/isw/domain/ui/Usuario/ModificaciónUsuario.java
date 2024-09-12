@@ -1,8 +1,8 @@
-package icai.dtc.isw.domain.ui.Usuario;
+package main.java.icai.dtc.isw.domain.ui.Usuario;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.Usuario.InfoUsuario;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.ui.Usuario.InfoUsuario;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,11 +1,11 @@
-package icai.dtc.isw.domain.ui;
+package main.java.icai.dtc.isw.domain.ui;
 
-import icai.dtc.isw.client.Client;
-import icai.dtc.isw.domain.exception.InicioSesionException;
-import icai.dtc.isw.domain.exception.RegistroException;
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.Usuario.Registro;
-import icai.dtc.isw.server.SocketServer;
+import main.java.icai.dtc.isw.client.Client;
+import main.java.icai.dtc.isw.domain.exception.InicioSesionException;
+import main.java.icai.dtc.isw.domain.exception.RegistroException;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Registro;
+import main.java.icai.dtc.isw.server.SocketServer;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,7 +33,7 @@ public class PanelInicio extends JFrame{
         super("Smart City");
         panelSur.add(registro, BorderLayout.EAST);
         panelSur.add(inicioSesion, BorderLayout.WEST);
-
+        panelSur.setBackground(Color.WHITE);
         Image imagen = new ImageIcon("./src/main/java/icai/dtc/isw/resources/FotosMapa/smartCity.png").getImage();
         ImageIcon icono = new ImageIcon(imagen.getScaledInstance(250, 250 , Image.SCALE_SMOOTH));
         foto.setIcon(icono);
@@ -85,7 +85,7 @@ public class PanelInicio extends JFrame{
         this.add(panelNorte, BorderLayout.NORTH);
         this.add(panelSur, BorderLayout.SOUTH);
         this.pack();
-
+        this.setSize(250,312);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);

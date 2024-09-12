@@ -1,4 +1,4 @@
-package icai.dtc.isw.domain.exception;
+package main.java.icai.dtc.isw.domain.exception;
 
 import javax.swing.*;
 

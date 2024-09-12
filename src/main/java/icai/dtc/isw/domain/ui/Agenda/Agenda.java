@@ -1,7 +1,7 @@
-package icai.dtc.isw.domain.ui.Agenda;
+package main.java.icai.dtc.isw.domain.ui.Agenda;
 
-import icai.dtc.isw.domain.ui.Usuario.Customer;
-import icai.dtc.isw.domain.ui.MapaMenu;
+import main.java.icai.dtc.isw.domain.ui.Usuario.Customer;
+import main.java.icai.dtc.isw.domain.ui.MapaMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,12 +19,12 @@ public class Agenda extends JFrame{
     private JButton btnModificar = new JButton("Modificar");
     private JButton btnVolver = new JButton("Volver menú principal");
 
-    public Agenda(Customer perfil, ArrayList<FranjaHoraria> lista){
+    public Agenda(Customer perfil, ArrayList<FranjaHorariaReal> lista){
 
         LocalDate hoy = LocalDate.now();
         String fecha = "Agenda para el día " + hoy.getDayOfMonth() + " de " + hoy.getMonth() + " de " + hoy.getYear();
 
-        //lista = establecerID(lista);
+
 
         Font fuente = new Font("Tahoma", Font.ITALIC, 17);
         Font fuenteTitulo = new Font("Tahoma", Font.BOLD, 17);
@@ -33,7 +33,7 @@ public class Agenda extends JFrame{
         pnlPrincipal = new JPanel((new GridLayout(size,1)));
         pnlBotones = new JPanel(new FlowLayout());
 
-        for (FranjaHoraria l : lista) {
+        for (FranjaHorariaReal l : lista) {
             pnlFecha = new JPanel(new FlowLayout());
             JLabel hora = new JLabel("Hora: "+l.getHora());
             hora.setFont(fuenteTitulo);
@@ -50,8 +50,8 @@ public class Agenda extends JFrame{
             pnlFecha.add(dia);
             pnlFecha.add(mes);
             pnlFecha.add(año);
-
             pnlFecha.add(descripcion);
+            pnlPrincipal.add(pnlFecha);
         }
 
         pnlBotones.add(btnAñadir);
@@ -95,8 +95,6 @@ public class Agenda extends JFrame{
             }
         });
 
-
-        pnlPrincipal.add(pnlFecha);
         this.add(pnlPrincipal,BorderLayout.CENTER);
         this.add(pnlBotones,BorderLayout.SOUTH);
         this.setTitle(fecha);

@@ -1,16 +1,17 @@
-package icai.dtc.isw.controler;
+package main.java.icai.dtc.isw.controler;
 
 import java.util.ArrayList;
 
-import icai.dtc.isw.dao.MapaDAO;
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.dao.MapaDAO;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
 
 public class MapaControler {
+
     //Relacionado con las localidades
     public  void getRestaurantes(ArrayList<Restaurante> lista) {MapaDAO.getRestaurantes(lista);}
     public void getHoteles(ArrayList<Hotel> lista) {

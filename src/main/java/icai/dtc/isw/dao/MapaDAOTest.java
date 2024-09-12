@@ -1,11 +1,13 @@
-package icai.dtc.isw.dao;
+package main.java.icai.dtc.isw.dao;
 
-import icai.dtc.isw.domain.localidad.Hotel;
-import icai.dtc.isw.domain.localidad.Museo;
-import icai.dtc.isw.domain.localidad.Restaurante;
-import icai.dtc.isw.domain.ocio.Evento;
-import icai.dtc.isw.domain.ocio.Monumento;
-import icai.dtc.isw.domain.ocio.Parque;
+import main.java.icai.dtc.isw.dao.MapaDAO;
+import main.java.icai.dtc.isw.domain.localidad.Hotel;
+import main.java.icai.dtc.isw.domain.localidad.Museo;
+import main.java.icai.dtc.isw.domain.localidad.Restaurante;
+import main.java.icai.dtc.isw.domain.ocio.Evento;
+import main.java.icai.dtc.isw.domain.ocio.Monumento;
+import main.java.icai.dtc.isw.domain.ocio.Parque;
+import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 
-public class MapaDAOTest {
+public class MapaDAOTest extends TestCase {
 
     private static MapaDAO dao;
 
@@ -39,7 +41,7 @@ public class MapaDAOTest {
 
         dao.getHoteles(lista);
 
-        assertEquals(lista.get(1).getNombre(),"Princesa Plaza Madrid");
+        assertEquals(lista.get(0).getNombre(),"Princesa Plaza Madrid");
     }
 
     @Test
@@ -67,7 +69,7 @@ public class MapaDAOTest {
 
         dao.getMonumentos(lista);
 
-        assertEquals(lista.get(1).getNombre(),"Plaza Mayor");
+        assertEquals(lista.get(0).getNombre(),"Plaza Mayor");
     }
 
     @Test
@@ -79,4 +81,6 @@ public class MapaDAOTest {
 
         assertEquals(lista.get(0).getNombre(),"Parque de El Retiro");
     }
+
+
 }
